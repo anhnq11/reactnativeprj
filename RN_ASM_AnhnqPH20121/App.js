@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import IntroScr from './screen/introScr/IntroScr';
+import DangKyScr from './screen/dangKyScr/DangKyScr';
+import DangNhapScr from './screen/dangNhapScr/DangNhapScr';
+import TabNav from './screen/mainScr/TabNav';
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Heloo, World!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Intro" component={IntroScr} options = {{headerShown: false}}/>
+        <Stack.Screen name="DangNhap" component={DangNhapScr} options = {{headerShown: false}}/>
+        <Stack.Screen name="DangKy" component={DangKyScr} options = {{headerShown: false}}/>
+        <Stack.Screen name="TabNav" component={TabNav} options = {{headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
