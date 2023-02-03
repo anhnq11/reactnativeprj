@@ -1,10 +1,10 @@
-import { View, FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
-import NewItems from './newsItems/NewItems';
+import FriendItem from './friendItem/FriendItem'
 
 const introImg = 'https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/rGTEEA2fm66YMzeJz2UbwkKOW62bZVlqKOKZrXlMN7g.jpeg'
 
-const HomeScr = () => {
+const FriendScr = () => {
   let inputData = [
     {
       id: 1,
@@ -53,18 +53,16 @@ const HomeScr = () => {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.',
       image: introImg,
     },
-    
-    
   ];
   return (
-      <View>
+    <View>
       <FlatList
       keyExtractor={item => `${item.id}`}
       data={inputData}
-      renderItem={({ item }) => <NewItems inputData = {item} />} 
+      renderItem={({ item }) => <FriendItem inputData = {item} />} 
       />
     </View>
   )
 }
 
-export default HomeScr
+export default FriendScr

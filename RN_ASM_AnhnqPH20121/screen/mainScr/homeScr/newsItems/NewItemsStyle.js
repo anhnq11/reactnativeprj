@@ -6,7 +6,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white',
         paddingHorizontal: 10,
-        marginBottom: 10,
+        marginTop: 10,
         padding: 3,
     },
     userInfo:{
@@ -47,9 +47,6 @@ export default StyleSheet.create({
     },
     followImg:{
         fontSize: 25,
-    },
-    contentBox:{
-        backgroundColor: 'red',
     },
     contentText:{
         fontSize: 16,
