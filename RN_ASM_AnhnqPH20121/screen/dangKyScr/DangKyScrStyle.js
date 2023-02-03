@@ -17,9 +17,8 @@ export default StyleSheet.create({
         marginLeft: 20
     },
     backBtn:{
-        width: '80%',
-        height: '80%',
         color: 'white',
+        fontSize: 25
     },
     textBox:{
         width: '100%',

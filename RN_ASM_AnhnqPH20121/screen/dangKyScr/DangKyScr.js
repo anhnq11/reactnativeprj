@@ -1,12 +1,13 @@
 import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import Style from './DangKyScrStyle'
+import Icons from 'react-native-vector-icons/Ionicons'
 
 const DangKyScr = ({ navigation }) => {
     return (
         <View>
             <TouchableOpacity style={Style.backBtnBox} onPress={() => navigation.navigate("DangNhap")}>
-                <Image style={Style.backBtn} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/0/340.png' }} />
+                <Icons name='arrow-back' style = {Style.backBtn}/>
             </TouchableOpacity>
 
             <View style={Style.container}>
