@@ -34,7 +34,7 @@ export default StyleSheet.create({
         fontWeight: '500',
     },
     userTime:{
-        color: '#696C87',
+        color: '#61605f',
         marginLeft: 5,
         marginTop: -5
     },

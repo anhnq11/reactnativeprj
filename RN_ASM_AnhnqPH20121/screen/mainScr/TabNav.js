@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScr from './homeScr/HomeScr';
 import FriendScr from './friendScr/FriendScr';
 import MediaScr from './media/MediaScr';
-import Profile from './profileScr/Profile';
+import Profile from './profileScr/ProfileScr';
 
 import Feather from 'react-native-vector-icons/Feather'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
