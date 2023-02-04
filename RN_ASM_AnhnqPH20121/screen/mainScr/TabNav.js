@@ -1,5 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+import HomeNav from './homeScr/HomeNav';
 import HomeScr from './homeScr/HomeScr';
 import FriendScr from './friendScr/FriendScr';
 import MediaScr from './media/MediaScr';
@@ -10,15 +12,18 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 const Tab = createBottomTabNavigator();
+
 const activeColor = '#30CF59';
 
 const TabNav = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScr}
+      <Tab.Screen name="Home" component={HomeNav}
         options={{
+          headerShown: false,
           tabBarLabelStyle: {
             fontSize: 0,
+            color: 'white'
           },
           tabBarActiveTintColor: activeColor,
           tabBarIcon: () => {

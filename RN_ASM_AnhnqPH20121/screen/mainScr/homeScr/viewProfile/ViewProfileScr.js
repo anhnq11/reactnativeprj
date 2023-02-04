@@ -1,18 +1,15 @@
-import { View, FlatList, TouchableOpacity, TextInput, Text } from 'react-native'
-import { useState } from 'react';
+import { View, Text, Image, FlatList, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
-import NewItems from './newsItems/NewItems';
-import Entypo from 'react-native-vector-icons/Entypo'
+import Style from './ViewProfileScrStyle'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import AwesomeAlert from 'react-native-awesome-alerts';
-import Style from './HomeStyleScr';
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import Feather from 'react-native-vector-icons/Feather'
+import NewsItemInPr from '../../profileScr/news/NewsItemInPr'
 
 const introImg = 'https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/rGTEEA2fm66YMzeJz2UbwkKOW62bZVlqKOKZrXlMN7g.jpeg'
 
-const HomeScr = ({ navigation }) => {
-
-  const [ShowAlert, setShowAlert] = useState(false)
-
+const ViewProfileScr = ({navigation}) => {
   let inputData = [
     {
       id: 1,
@@ -61,66 +58,43 @@ const HomeScr = ({ navigation }) => {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.',
       image: introImg,
     },
-
-
+    
+    
   ];
-
   return (
-    <View>
+    <ScrollView>
+      <View style={Style.container}>
+      <View style={Style.imgIntroBox}>
+        <Image source={{ uri: introImg }} style={Style.imgIntro} />
+      </View>
+      <View style={Style.userInfoBox}>
+        <View style={Style.userImgBox}><FontAwesome style={Style.userImg} name='user-circle' /></View>
+        <Text style={Style.userName} >UserName</Text>
+      </View>
+      <View style={Style.flInfo}>
+        <Text style={Style.postText}>1 Post</Text>
+        <Text style={Style.flText}>11 Follower</Text>
+      </View>
+      <View style={Style.btnContainer}>
+        <TouchableOpacity style={Style.btnBoxL}>
+          <Ionicons style={Style.btnIcon} name='chatbox-ellipses-outline' />
+          <Text style={Style.btnText}>Chat</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Feather style={Style.btnIcon} name='user-plus' />
+          <Text style={Style.btnText}>Follow</Text>
+        </TouchableOpacity>
+      </View>
       <FlatList
-        // contentContainerStyle={{height: '95%'}}
-        keyExtractor={item => `${item.id}`}
-        data={inputData}
-        renderItem={({ item }) => <NewItems inputData={item} />}
-      />
-      {/* <Button title='Click' onPress={() => {navigation.navigate('ViewProfile')}}/> */}
-      <TouchableOpacity style={Style.addBtnBox} onPress={() => setShowAlert(!ShowAlert)}>
-        <Entypo name='plus' style={Style.addBtn} />
-      </TouchableOpacity>
-      <AwesomeAlert
-
-        show={ShowAlert}
-        title='New Post'
-        titleStyle={Style.titleAlert}
-
-        closeOnTouchOutside={false}
-        closeOnHardwareBackPress={false}
-
-        showCancelButton={true}
-        showConfirmButton={true}
-
-        cancelText="Cancel"
-        cancelButtonStyle={Style.btnBgr}
-        cancelButtonTextStyle={Style.btnText}
-
-        confirmText="Post"
-        confirmButtonStyle={Style.btnBgr}
-        confirmButtonTextStyle={Style.btnText}
-
-        onCancelPressed={() => {
-          setShowAlert(false)
-        }}
-        onConfirmPressed={() => {
-          setShowAlert(true)
-        }}
-
-        customView={
-          <View>
-            <TextInput placeholder="What's on your mind?"
-            multiline
-            numberOfLines={2}
-            maxLength={400}
-            style={Style.inputText}
-            />
-            <TouchableOpacity style={Style.addImgBox}>
-              <MaterialIcons style={Style.addImgIcon} name='add-a-photo'/>
-              <Text style={Style.addImg}>Add a photo</Text>
-            </TouchableOpacity>
-          </View>
-        }
+      keyExtractor={item => `${item.id}`}
+      data={inputData}
+      horizontal={false}
+      renderItem={({ item }) => <NewsItemInPr inputData = {item} />} 
       />
     </View>
+    </ScrollView>
   )
 }
 
-export default HomeScr
+export default ViewProfileScr;

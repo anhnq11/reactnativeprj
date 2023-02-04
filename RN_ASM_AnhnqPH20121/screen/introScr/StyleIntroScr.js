@@ -9,7 +9,6 @@ export default StyleSheet.create({
     imgIntroBox:{
         width: '100%',
         height: '60%',
-        backgroundColor: 'red',
         marginBottom: 5,
     },
     imgIntro:{

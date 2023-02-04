@@ -1,26 +1,21 @@
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
-import Style from './NewItemsStyle'
+import Style from './NewsItemInPrStyle'
 
-const NewItems = (props, {navigation}) => {
+const NewsItemInPr = (props) => {
     const { inputData } = props;
-
-    const viewProfile = () => {
-        // navigation.navigate('ViewProfile');
-    }
     return (
         <View style={Style.container}>
 
             {/* User Info */}
             <View style={Style.userInfo}>
-                <TouchableOpacity style={Style.userImgBox} onPress={() => viewProfile()}><FontAwesome name='user-circle' style={Style.userImg} /></TouchableOpacity>
+                <View style={Style.userImgBox}><FontAwesome name='user-circle' style={Style.userImg} /></View>
                 <View style={Style.userNameBox}>
-                    <TouchableOpacity onPress={() => viewProfile()}><Text style={Style.userName}>{inputData.name}</Text></TouchableOpacity>
+                    <View><Text style={Style.userName}>{inputData.name}</Text></View>
                     <Text style={Style.userTime}>1 hour</Text>
                 </View>
-                <TouchableOpacity style={Style.followBox}><SimpleLineIcons name='user-follow' style={Style.followImg} /></TouchableOpacity>
             </View>
 
             {/* Content */}
@@ -48,4 +43,4 @@ const NewItems = (props, {navigation}) => {
     )
 }
 
-export default NewItems
+export default NewsItemInPr
