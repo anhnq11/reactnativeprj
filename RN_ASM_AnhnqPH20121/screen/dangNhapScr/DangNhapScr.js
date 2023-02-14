@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput, Image, Modal, Alert } from 'react-native'
 import React from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react'
 import Style from './DangNhapStyleScr'
 const DangNhapScr = ({ navigation }) => {
@@ -37,20 +38,19 @@ const DangNhapScr = ({ navigation }) => {
                             mCheck = false;
                         } else {
                             // Lưu thông tin đăng nhập vào LS
-                            // try {
-                            //     await AsyncStorage.setItem('loginInfo', JSON.stringify(objU))
-                            // } catch (e) {
-                            //     console.log(e);
-                            // }
+                            try {
+                                await AsyncStorage.setItem('loginInfo', JSON.stringify(objU))
+                            } catch (e) {
+                                console.log(e);
+                            }
                         }
                     }
                     if (!mCheck) {
                         Alert.alert('Thông báo', 'Tên đăng nhập hoặc mật khẩu không đúng!')
                     }
-                    else{
-                        Alert.alert('Thông báo', 'Đăng nhập thành công!', [
-                            {text: 'OK', onPress: () => navigation.navigate("TabNav")},
-                          ]);
+                    else {
+                        Alert.alert('Thông báo', 'Đăng nhập thành công!');
+                        navigation.navigate("TabNav")
                     }
                 })
         }

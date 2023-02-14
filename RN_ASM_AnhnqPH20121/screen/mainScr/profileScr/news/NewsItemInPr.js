@@ -5,23 +5,25 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import Style from './NewsItemInPrStyle'
 
 const NewsItemInPr = (props) => {
-    const { inputData } = props;
     return (
         <View style={Style.container}>
 
             {/* User Info */}
             <View style={Style.userInfo}>
-                <View style={Style.userImgBox}><FontAwesome name='user-circle' style={Style.userImg} /></View>
+                <View style={Style.userImgBox}><Image style={Style.userImg} source={{ uri: props.userInfo.img }} /></View>
                 <View style={Style.userNameBox}>
-                    <View><Text style={Style.userName}>{inputData.name}</Text></View>
-                    <Text style={Style.userTime}>1 hour</Text>
+                    <Text style={Style.userName}>{props.userInfo.fullname}</Text>
+                    {
+                        props.userInfo.type == 1 ? <Text style={Style.userType}>Admin</Text>:<Text style={Style.userType}>User</Text>
+                    }
                 </View>
             </View>
-
             {/* Content */}
             <View>
-                <Text style={Style.contentText}>{inputData.content}</Text>
-                <View style={Style.contentImgBox}><Image style={Style.contentImg} resizeMode='cover' source={{ uri: inputData.image }} /></View>
+                <Text style={Style.contentText}>{props.inputData.content}</Text>
+                {
+                    props.inputData.img != '' ? <View style={Style.contentImgBox}><Image style={Style.contentImg} source={{ uri: props.inputData.img }}/></View>:<View></View>
+                }
             </View>
 
             {/* React Icon */}

@@ -12,16 +12,20 @@ export default StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
+        borderBottomWidth: 2,
+        borderColor: '#ccc'
     },
     userImgBox:{
-        width: 40,
-        height: 40,
+        width: 45,
+        height: 45,
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
     },
     userImg:{
-        fontSize: 40,
+        width: '100%',
+        height: '100%',
+        borderRadius: 45,
     },
     userNameBox:{
         width: '55%',
@@ -43,13 +47,13 @@ export default StyleSheet.create({
 
     },
     followBtn:{
-        width: '26%',
+        width: 100,
         height: 30,
         backgroundColor: '#30CF59',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 8,
         paddingHorizontal: 5
     },
     followText:{

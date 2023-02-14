@@ -22,27 +22,23 @@ export default StyleSheet.create({
         flexDirection: 'row',
     },
     userImgBox:{
-        width: 98,
-        height: 98,
-        backgroundColor: 'white',
-        borderRadius: 90,
-        borderWidth: 4,
-        borderColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
-
+        width: 100,
+        height: 100,
     },
     userImg:{
-        fontSize: 90,
+        width: '100%',
+        height: '100%',
+        borderRadius: 100,
     },
     userName:{
         fontSize: 30,
         fontWeight: '500',
         marginLeft: 10,
-        marginTop: 30,
+        marginTop: 35,
     },
     flInfo:{
         marginTop: 45,
+        marginLeft: 20,
         flexDirection: 'row',
     },
     postText:{

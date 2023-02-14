@@ -9,6 +9,8 @@ import Profile from './profileScr/ProfileScr';
 import Feather from 'react-native-vector-icons/Feather'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import Fontisto from 'react-native-vector-icons/Fontisto'
+import NotifyScr from './notifyScr/NotifyScr';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,8 +46,22 @@ const TabNav = () => {
           tabBarActiveBackgroundColor: activeColor
         }} />
 
+      <Tab.Screen name="Notify" component={NotifyScr}
+        options={{
+          title: 'My Notifications',
+          tabBarLabelStyle: {
+            fontSize: 0,
+          },
+          tabBarActiveTintColor: activeColor,
+          tabBarIcon: () => {
+            return (<Fontisto name='bell' style={{ fontSize: 24, }}/>)
+          },
+          tabBarActiveBackgroundColor: activeColor
+        }} />
+
       <Tab.Screen name="Music" component={MediaScr}
         options={{
+          title: 'My Music',
           tabBarLabelStyle: {
             fontSize: 0,
           },
@@ -58,6 +74,7 @@ const TabNav = () => {
 
         <Tab.Screen name="Profile" component={Profile}
         options={{
+          title: 'My Profile',
           tabBarLabelStyle: {
             fontSize: 0,
           },

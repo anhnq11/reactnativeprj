@@ -5,9 +5,8 @@ export default StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         backgroundColor: 'white',
-        paddingHorizontal: 10,
-        marginTop: 10,
-        padding: 3,
+        paddingHorizontal: 20,
+        marginTop: 3,
     },
     userInfo:{
         width: '100%',
@@ -15,14 +14,14 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     userImgBox:{
-        width: 40,
-        height: 40,
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: 45,
+        height: 45,
         margin: 5,
     },
     userImg:{
-        fontSize: 40,
+        width: '100%',
+        height: '100%',
+        borderRadius: 45,
     },
     userNameBox:{
         width: '70%',
@@ -33,7 +32,7 @@ export default StyleSheet.create({
         color: 'black',
         fontWeight: '500',
     },
-    userTime:{
+    userType:{
         color: '#61605f',
         marginLeft: 5,
         marginTop: -5
@@ -67,6 +66,9 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
+        borderBottomWidth: 2,
+        paddingBottom: 5,
+        borderColor: '#ccc',
     },
     reactBox:{
         width: '33%',
