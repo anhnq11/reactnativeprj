@@ -1,4 +1,4 @@
-import { View, FlatList, TouchableOpacity, TextInput, Text } from 'react-native'
+import { View, FlatList, TouchableOpacity, TextInput, Text, Button } from 'react-native'
 import { useState } from 'react';
 import React from 'react'
 import NewItems from './newsItems/NewItems';
@@ -68,15 +68,14 @@ const HomeScr = ({ navigation }) => {
   return (
     <View>
       <FlatList
-        // contentContainerStyle={{height: '95%'}}
         keyExtractor={item => `${item.id}`}
         data={inputData}
-        renderItem={({ item }) => <NewItems inputData={item} />}
+        renderItem={({ item }) => <NewItems inputData={item} navigation={navigation} />}
       />
-      {/* <Button title='Click' onPress={() => {navigation.navigate('ViewProfile')}}/> */}
       <TouchableOpacity style={Style.addBtnBox} onPress={() => setShowAlert(!ShowAlert)}>
         <Entypo name='plus' style={Style.addBtn} />
       </TouchableOpacity>
+      
       <AwesomeAlert
 
         show={ShowAlert}

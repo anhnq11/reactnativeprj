@@ -4,11 +4,14 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import Style from './NewItemsStyle'
 
-const NewItems = (props, {navigation}) => {
+const NewItems = (props) => {
     const { inputData } = props;
+    const { navigate } = props.navigation;
 
     const viewProfile = () => {
-        // navigation.navigate('ViewProfile');
+        navigate('ViewProfile', {inputData});
+        console.log("NewItems: ");
+        console.log(inputData);
     }
     return (
         <View style={Style.container}>

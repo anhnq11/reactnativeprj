@@ -4,7 +4,7 @@ import FriendItem from './friendItem/FriendItem'
 
 const introImg = 'https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/rGTEEA2fm66YMzeJz2UbwkKOW62bZVlqKOKZrXlMN7g.jpeg'
 
-const FriendScr = () => {
+const FriendScr = ( { navigation }) => {
   let inputData = [
     {
       id: 1,
@@ -59,7 +59,7 @@ const FriendScr = () => {
       <FlatList
       keyExtractor={item => `${item.id}`}
       data={inputData}
-      renderItem={({ item }) => <FriendItem inputData = {item} />} 
+      renderItem={({ item }) => <FriendItem inputData = {item} navigation={navigation} />} 
       />
     </View>
   )

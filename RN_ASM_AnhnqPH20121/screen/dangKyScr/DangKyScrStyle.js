@@ -77,7 +77,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        marginTop: 20
+        marginVertical: 20
     },
     dontAcc:{
         fontSize: 16,

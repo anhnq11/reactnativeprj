@@ -2,8 +2,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import HomeNav from './homeScr/HomeNav';
-import HomeScr from './homeScr/HomeScr';
-import FriendScr from './friendScr/FriendScr';
+import FriendNav from './friendScr/FriendNav';
 import MediaScr from './media/MediaScr';
 import Profile from './profileScr/ProfileScr';
 
@@ -32,8 +31,9 @@ const TabNav = () => {
           tabBarActiveBackgroundColor: activeColor
         }} />
 
-      <Tab.Screen name="Friend" component={FriendScr}
+      <Tab.Screen name="Friend" component={FriendNav}
         options={{
+          headerShown: false,
           tabBarLabelStyle: {
             fontSize: 0,
           },

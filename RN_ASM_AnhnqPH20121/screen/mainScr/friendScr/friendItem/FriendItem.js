@@ -6,10 +6,14 @@ import Feather from 'react-native-vector-icons/Feather'
 
 const FriendItem = (props) => {
     const { inputData } = props;
+    const { navigate } = props.navigation;
+    const viewProfile = () => {
+        navigate('ViewProfile');
+    }
     return (
         <View style={Style.container}>
             {/* User Info */}
-            <TouchableOpacity style={Style.userInfo}>
+            <TouchableOpacity style={Style.userInfo} onPress={() => viewProfile()}>
                 <View style={Style.userImgBox}><FontAwesome name='user-circle' style={Style.userImg} /></View>
                 <View style={Style.userNameBox}>
                     <View><Text style={Style.userName}>{inputData.name}</Text></View>

@@ -9,8 +9,8 @@ import NewsItemInPr from '../../profileScr/news/NewsItemInPr'
 
 const introImg = 'https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/rGTEEA2fm66YMzeJz2UbwkKOW62bZVlqKOKZrXlMN7g.jpeg'
 
-const ViewProfileScr = ({navigation}) => {
-  let inputData = [
+const ViewProfileScr = (props) => {
+  let data = [
     {
       id: 1,
       name: 'AnhNQ',
@@ -58,42 +58,46 @@ const ViewProfileScr = ({navigation}) => {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.',
       image: introImg,
     },
-    
-    
+
+
   ];
   return (
-    <ScrollView>
-      <View style={Style.container}>
-      <View style={Style.imgIntroBox}>
-        <Image source={{ uri: introImg }} style={Style.imgIntro} />
-      </View>
-      <View style={Style.userInfoBox}>
-        <View style={Style.userImgBox}><FontAwesome style={Style.userImg} name='user-circle' /></View>
-        <Text style={Style.userName} >UserName</Text>
-      </View>
-      <View style={Style.flInfo}>
-        <Text style={Style.postText}>1 Post</Text>
-        <Text style={Style.flText}>11 Follower</Text>
-      </View>
-      <View style={Style.btnContainer}>
-        <TouchableOpacity style={Style.btnBoxL}>
-          <Ionicons style={Style.btnIcon} name='chatbox-ellipses-outline' />
-          <Text style={Style.btnText}>Chat</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Feather style={Style.btnIcon} name='user-plus' />
-          <Text style={Style.btnText}>Follow</Text>
-        </TouchableOpacity>
-      </View>
+    <View>
       <FlatList
-      keyExtractor={item => `${item.id}`}
-      data={inputData}
-      horizontal={false}
-      renderItem={({ item }) => <NewsItemInPr inputData = {item} />} 
+        ListHeaderComponent={() => (
+          <View style={Style.container}>
+            {
+              console.log(props.inputData)
+            }
+            <View style={Style.imgIntroBox}>
+              <Image source={{ uri: introImg }} style={Style.imgIntro} />
+            </View>
+            <View style={Style.userInfoBox}>
+              <View style={Style.userImgBox}><FontAwesome style={Style.userImg} name='user-circle' /></View>
+              <Text style={Style.userName} >{props.name}</Text>
+            </View>
+            <View style={Style.flInfo}>
+              <Text style={Style.postText}>1 Post</Text>
+              <Text style={Style.flText}>11 Follower</Text>
+            </View>
+            <View style={Style.btnContainer}>
+              <TouchableOpacity style={Style.btnBoxL}>
+                <Ionicons style={Style.btnIcon} name='chatbox-ellipses-outline' />
+                <Text style={Style.btnText}>Chat</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={Style.btnBoxR}>
+                <Feather style={Style.btnIcon} name='user-plus' />
+                <Text style={Style.btnText}>Follow</Text>
+              </TouchableOpacity>
+            </View>
+          </View>)}
+        keyExtractor={item => `${item.id}`}
+        data={data}
+        horizontal={false}
+        renderItem={({ item }) => <NewsItemInPr inputData={item} />}
       />
     </View>
-    </ScrollView>
   )
 }
 
