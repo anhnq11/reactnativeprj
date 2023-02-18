@@ -6,8 +6,8 @@ export default StyleSheet.create({
         height: 55,
         backgroundColor: '#30CF59',
         position: 'absolute',
-        bottom: 20,
-        right: 20,
+        bottom: 15,
+        right: 15,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 300,
@@ -16,41 +16,76 @@ export default StyleSheet.create({
         color: 'white',
         fontSize: 40,
     },
-    titleAlert:{
-        color: 'black',
-        fontWeight: '500',
-        fontSize: 22
-    },
-    btnBgr:{
-        backgroundColor: '#30CF59',
-        width: 80,
-        height: 40
-    },
-    btnText:{
-        fontSize: 18,
-        fontWeight: '500',
-        textAlign: 'center'
-    },
-    inputText:{
-        width: 260,
-        color: 'black',
-        fontSize: 18,
-        paddingHorizontal: 10,
+    modalBox:{
+        width: '90%',
         backgroundColor: '#ccc',
         borderRadius: 10,
-    },
-    addImgBox:{
-        flexDirection: 'row',
-        marginTop: 10,
-        marginLeft: 10,
+        paddingVertical: 10,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal: '5%',
+        marginTop: '30%',
+        borderWidth: 4,
+        borderColor: '#30CF59'
     },
-    addImgIcon:{
+    modalTitle:{
+        fontSize: 30,
+        fontWeight: '500',
+        marginLeft: 10,
+    },
+    inputBox:{
+        width: 300,
+        borderWidth: 2,
+        borderRadius: 8,
+        borderColor: '#30CF59',
+        backgroundColor: 'white',
+        padding: 10,
+        marginTop: 10,
+    },
+    inputText:{
+        color: 'black',
+        fontWeight: '600',
+        fontSize: 18,
+    },
+    modalImgBox:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10, 
+    },
+    btnAddImg:{
+        width: 250,
+        height: 50,
+        borderRadius: 15,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderWidth: 2,
+        borderColor: 'black',
+        borderStyle: 'dashed',
+        paddingHorizontal: 25
+    },
+    btnAddImgText:{
         fontSize: 20,
+        fontWeight: '500'
+    },  
+    modalBtnBox:{
+        width: '80%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 10,
     },
-    addImg:{
-        fontSize: 16,
-        marginLeft: 10
+    modalBtn:{
+        width: '45%',
+        backgroundColor: '#30CF59',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    modalBtnText:{
+        color: 'white',
+        fontSize: 22,
+        fontWeight: '500',
+        paddingVertical: 3,
     }
 })

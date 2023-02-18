@@ -5,7 +5,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white',
         paddingHorizontal: 10,
-        marginTop: 10,
+        marginTop: 5,
         padding: 3,
     },
     userInfo:{
@@ -68,4 +68,8 @@ export default StyleSheet.create({
         fontSize: 25,
         color: 'white'
     },
+    deleteIcon:{
+        fontSize: 25,
+        marginLeft: 70
+    }
 })

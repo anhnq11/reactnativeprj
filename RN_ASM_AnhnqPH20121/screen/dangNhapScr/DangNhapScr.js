@@ -3,6 +3,8 @@ import React from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react'
 import Style from './DangNhapStyleScr'
+import URL from '../../UrlAPi';
+
 const DangNhapScr = ({ navigation }) => {
 
     const [userName, setuserName] = useState('');
@@ -25,7 +27,7 @@ const DangNhapScr = ({ navigation }) => {
         // Fetch dữ liệu, kiểm tra thông tin tồn tại
         if (check) {
             let mCheck = true;
-            let url = 'http://192.168.106.105:3000/profile?name=' + userName;
+            let url = URL + '/profiles?name=' + userName;
             fetch(url)
                 .then((res) => { return res.json() })
                 .then(async (resLog) => {

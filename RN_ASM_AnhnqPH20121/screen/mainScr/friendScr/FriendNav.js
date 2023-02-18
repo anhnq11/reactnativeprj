@@ -11,7 +11,7 @@ const FriendNav = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
-        <Stack.Screen name="Friend" component={FriendScr}/>
+        <Stack.Screen name="User" component={FriendScr}/>
         <Stack.Screen name="ViewProfile" component={ViewProfileScr}/>
       </Stack.Navigator>
     </NavigationContainer>

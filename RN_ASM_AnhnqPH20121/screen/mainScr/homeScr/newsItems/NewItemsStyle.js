@@ -22,7 +22,9 @@ export default StyleSheet.create({
         margin: 5,
     },
     userImg:{
-        fontSize: 40,
+        width: '100%',
+        height: '100%',
+        borderRadius: 40
     },
     userNameBox:{
         width: '70%',
@@ -80,6 +82,78 @@ export default StyleSheet.create({
     },
     reactText:{
         fontSize: 17,
+    },
+    modalBox:{
+        width: '90%',
+        backgroundColor: '#ccc',
+        borderRadius: 10,
+        padding: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: '5%',
+        marginVertical: '15%',
+        borderWidth: 4,
+        borderColor: '#30CF59'
+    },
+    modalTitle:{
+        width: '80%',
+        fontSize: 30,
+        fontWeight: '500',
+        marginLeft: 10,
+        textAlign: 'center',
+        marginLeft: '10%',
+    },
+    iconClose:{
+        color: '#30CF59',
+        fontSize: 30,
+        textAlign: 'right'
+    },
+    cmtBox:{
+        width: 320,
+        borderBottomWidth: 1,
+        borderBottomColor: '#30CF59',
+        marginBottom: 5,
+    },
+    cmtUserIf:{
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    userImgBox:{
+        width: 35,
+        height: 35,
+    },
+    cmtName:{
+        color: '#30CF59',
+        fontWeight: '500',
+        marginLeft: 5,
+        fontSize: 18
+    },
+    cmtCnt:{
+        fontSize: 18,
+        paddingHorizontal: 5
+    },
+    addCmt:{
+        flexDirection: 'row',
+        backgroundColor: '#30CF59',
+        width: 320,
+        marginTop: 10,
+        borderRadius: 10,
+        alignItems: 'center'
+    },
+    ipCmt:{
+        borderColor: 'white',
+        borderWidth: 1,
+        width: '85%',
+        borderRadius: 10,
+        paddingVertical: 3,
+        paddingHorizontal: 10,
+        margin: 3,
+        fontSize: 18,
+        
+    },
+    sendCmt:{
+        fontSize: 23,
+        color: 'white',
+        marginLeft: 5
     }
-
 })

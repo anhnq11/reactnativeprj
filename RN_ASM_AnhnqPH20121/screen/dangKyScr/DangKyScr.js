@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import DropDownPicker from 'react-native-dropdown-picker';
 import Style from './DangKyScrStyle'
 import Icons from 'react-native-vector-icons/Ionicons'
+import URL from '../../UrlAPi';
 
 const DangKyScr = ({ navigation }) => {
 
@@ -56,7 +57,7 @@ const DangKyScr = ({ navigation }) => {
 
             // Kiểm tra trùng tên đăng nhập
             let mCheck = true;
-            let url = 'http://192.168.106.105:3000/profile?name=' + name;
+            let url = URL + '/profiles?name=' + name;
             fetch(url)
                 .then((res) => { return res.json() })
                 .then(async (resLog) => {
@@ -79,7 +80,7 @@ const DangKyScr = ({ navigation }) => {
                                 img: 'https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745'
                             }
 
-                            let urlPost = 'http://192.168.106.105:3000/profile';
+                            let urlPost = URL + '/profiles'
                             fetch(urlPost, {
                                 method: 'POST',
                                 headers: {

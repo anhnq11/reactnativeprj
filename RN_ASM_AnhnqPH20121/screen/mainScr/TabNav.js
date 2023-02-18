@@ -59,7 +59,7 @@ const TabNav = () => {
           tabBarActiveBackgroundColor: activeColor
         }} />
 
-      <Tab.Screen name="Music" component={MediaScr}
+      {/* <Tab.Screen name="Music" component={MediaScr}
         options={{
           title: 'My Music',
           tabBarLabelStyle: {
@@ -70,7 +70,7 @@ const TabNav = () => {
             return (<Feather name='music' style={{ fontSize: 24, }}/>)
           },
           tabBarActiveBackgroundColor: activeColor
-        }} />
+        }} /> */}
 
         <Tab.Screen name="Profile" component={Profile}
         options={{

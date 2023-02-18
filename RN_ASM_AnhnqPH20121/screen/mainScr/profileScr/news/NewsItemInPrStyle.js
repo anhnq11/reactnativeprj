@@ -13,6 +13,11 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    mUserInfo:{
+        width: '82%',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },  
     userImgBox:{
         width: 45,
         height: 45,
@@ -82,6 +87,11 @@ export default StyleSheet.create({
     },
     reactText:{
         fontSize: 17,
+    },
+    dropdownBox:{
+        width: '15%',
+        borderWidth: 0,
+        padding: 0,
     }
 
 })

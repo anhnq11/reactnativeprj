@@ -92,5 +92,65 @@ export default StyleSheet.create({
         fontSize: 17,
         color: 'white',
         marginLeft: 10
+    },
+    modalBox:{
+        width: '90%',
+        backgroundColor: '#ccc',
+        borderRadius: 10,
+        paddingVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: '5%',
+        marginTop: '30%',
+        borderWidth: 4,
+        borderColor: '#30CF59'
+    },
+    inputBox:{
+        width: 300,
+        borderWidth: 2,
+        borderRadius: 8,
+        borderColor: '#30CF59',
+        backgroundColor: 'white',
+        padding: 10,
+        marginTop: 10,
+    },
+    inputText:{
+        color: 'black',
+        fontWeight: '600',
+        fontSize: 18,
+    },
+    modalImgBox:{
+        width: 150,
+        height: 150,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 15, 
+    },
+    modalImg:{
+        width: '100%',
+        height: '100%',
+        borderRadius: 150,
+        backgroundColor: 'red'
+    },
+    modalBtnBox:{
+        width: '80%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 10,
+
+    },
+    modalBtn:{
+        width: '45%',
+        backgroundColor: '#30CF59',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    modalBtnText:{
+        color: 'white',
+        fontSize: 22,
+        fontWeight: '500',
+        paddingVertical: 3,
     }
 })

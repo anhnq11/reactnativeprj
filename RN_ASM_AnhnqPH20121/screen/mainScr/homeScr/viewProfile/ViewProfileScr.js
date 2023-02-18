@@ -67,14 +67,14 @@ const ViewProfileScr = (props) => {
         ListHeaderComponent={() => (
           <View style={Style.container}>
             {
-              console.log(props.inputData)
+              console.log(props.route.inputData)
             }
             <View style={Style.imgIntroBox}>
               <Image source={{ uri: introImg }} style={Style.imgIntro} />
             </View>
             <View style={Style.userInfoBox}>
               <View style={Style.userImgBox}><FontAwesome style={Style.userImg} name='user-circle' /></View>
-              <Text style={Style.userName} >{props.name}</Text>
+              <Text style={Style.userName} >{props.route.inputData.name}</Text>
             </View>
             <View style={Style.flInfo}>
               <Text style={Style.postText}>1 Post</Text>
