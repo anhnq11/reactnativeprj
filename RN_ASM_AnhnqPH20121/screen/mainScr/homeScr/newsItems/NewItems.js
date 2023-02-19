@@ -41,7 +41,7 @@ const NewItems = (props) => {
     const addNewCmt = () => {
         let newCmt = {
             postId: props.inputData.id,
-            profileId: props.inputData.profile.id,
+            profileId: props.userInfo.id,
             cmt: comment
         }
         let urlPost = URL + '/cmts'
@@ -75,6 +75,11 @@ const NewItems = (props) => {
             <View style={Style.userInfo}>
                 <View style={Style.userImgBox}><Image style={Style.userImg} source={{ uri: props.inputData.profile.img }} /></View>
                 <View style={Style.userNameBox}><Text style={Style.userName}>{props.inputData.profile.fullname}</Text>
+                    {
+                        props.inputData.profile.type == 1 ? <View style={Style.DesBox}>
+                            <Text style={Style.userDes}>@{props.inputData.profile.name}</Text>
+                        </View> : <View></View>
+                    }
                 </View>
                 {/* Follow Button */}
                 {

@@ -35,6 +35,16 @@ export default StyleSheet.create({
         color: 'black',
         fontWeight: '500',
     },
+    DesBox:{
+        flexDirection: 'row',
+    },
+    userDes:{
+        color: '#696C87',
+        marginRight: 10,
+        fontSize: 15,
+        color: 'black',
+
+    },
     userTime:{
         color: '#61605f',
         marginLeft: 5,
