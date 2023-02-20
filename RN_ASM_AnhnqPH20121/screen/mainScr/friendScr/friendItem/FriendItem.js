@@ -35,6 +35,7 @@ const FriendItem = (props) => {
                         .then((res) => {
                             if (res.status == 200) {
                                 Alert.alert("Thông báo", "Xóa tài khoản thành công!");
+                                props.onRefresh();
                             }
                         })
                         .catch((ex) => {
@@ -57,7 +58,7 @@ const FriendItem = (props) => {
         }
     }
 
-    // Fetch Data Follows
+    // Đếm số lượng người Follow
   const getFollowCount = async (value) => {
     let url = URL + '/follows?profileId=' + inputData.id
     try {
@@ -69,13 +70,13 @@ const FriendItem = (props) => {
     }
   }
 
-    // Lấy thông tin người dùng hiện tại trong LS, hiển thị lên màn hình
+    // Lấy thông tin người dùng hiện tại trong LS
     const getUserInfo = async () => {
         try {
             const value = await AsyncStorage.getItem('loginInfo')
             if (value !== null) {
                 getFollows(JSON.parse(value))
-                getFollowCount(JSON.parse(value))
+                getFollowCount()
                 setuserInfo(JSON.parse(value));
             }
         } catch (e) {
@@ -114,15 +115,15 @@ const FriendItem = (props) => {
                         inputData.type == 1 ? <View>
                             {
                                 // follow.forEach(element => {
-                                //     (inputData.id == element.profileId) ? 
+                                    // (inputData.id === follow.profileId) ? 
                                     // <TouchableOpacity style={Style.followBtn}>
-                                    //     {/* {console.log('T' + inputData.id + inputData.name + element.profileId)} */}
-                                    //     <Text style={Style.followText}>UF</Text>
+                                    //     {console.log('T' + inputData.id + inputData.name + follow.profileId)}
+                                    //     <Text style={Style.followText}>UnFollow</Text>
                                     //     <View style={Style.followImgBox}><Feather name='plus' style={Style.followImg} /></View>
                                     // </TouchableOpacity>
                                     //  :
                                         <TouchableOpacity style={Style.followBtn}>
-                                            {/* {console.log("F" + inputData.id + inputData.name + element.profileId)} */}
+                                            {/* {console.log("F" + inputData.id + inputData.name + follow.profileId)} */}
                                             <Text style={Style.followText}>Follow</Text>
                                             <View style={Style.followImgBox}><Feather name='plus' style={Style.followImg} /></View>
                                         </TouchableOpacity>

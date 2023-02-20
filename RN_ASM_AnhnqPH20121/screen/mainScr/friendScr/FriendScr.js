@@ -51,7 +51,7 @@ const FriendScr = ({ navigation }) => {
       <FlatList
         keyExtractor={(item) => { return item.id }}
         data={profiles}
-        renderItem={({ item }) => <FriendItem inputData={item} navigation={navigation} />}
+        renderItem={({ item }) => <FriendItem inputData={item} navigation={navigation} onRefresh={() => loadData()} />}
         key={(item) => { return item.id }}
         refreshControl={
           <RefreshControl refreshing={isLoading} onRefresh={loadData} />
