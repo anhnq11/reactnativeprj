@@ -17,6 +17,9 @@ const DangKyScr = ({ navigation }) => {
         { label: 'User', value: '0' },
         { label: 'Admin', value: '1' }
     ]);
+    const [isAdmin, setisAdmin] = useState(false)
+    const [secuCode, setsecuCode] = useState('')
+    const [isSignIn, setisSignIn] = useState(false)
 
     // Kiểm tra thông tin đăng ký
     const checkRegis = () => {
@@ -51,10 +54,24 @@ const DangKyScr = ({ navigation }) => {
         if (!check) {
             // Trống - Thông báo, yêu cầu nhập
             Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ thông tin!')
-        }
-        else {
-            // Đầy đủ thông tin
+        } else if (value == '1') {
+            // Kiểm tra quyền đăng ký
 
+            // Kiểm tra Security Code
+            if (secuCode !== 'anhnq123') {
+                Alert.alert('Thông báo', 'Security Code sai!')
+                setisSignIn(false)
+            } else {
+                setisSignIn(true)
+            }
+
+        } else {
+            setisSignIn(true)
+        }
+
+        // Thông tin hợp lệ => Đăng ký tài khoản
+        if (isSignIn) {
+            // Đầy đủ thông tin
             // Kiểm tra trùng tên đăng nhập
             let mCheck = true;
             let url = URL + '/profiles?name=' + name;
@@ -89,19 +106,19 @@ const DangKyScr = ({ navigation }) => {
                                 },
                                 body: JSON.stringify(accInfo)
                             })
-                            .then((res) => {
-                                if (res.status == 201) {
-                                    Alert.alert("Thông báo!", "Đăng ký tài khoản thành công!")
-                                    navigation.navigate("DangNhap")
-                                }
-                                else {
-                                    Alert.alert("Add Fail!")
-                                    console.log(res.status);
-                                }
-                            })
-                            .catch((ex) => {
-                                console.log(ex);
-                            });
+                                .then((res) => {
+                                    if (res.status == 201) {
+                                        Alert.alert("Thông báo!", "Đăng ký tài khoản thành công!")
+                                        navigation.navigate("DangNhap")
+                                    }
+                                    else {
+                                        Alert.alert("Add Fail!")
+                                        console.log(res.status);
+                                    }
+                                })
+                                .catch((ex) => {
+                                    console.log(ex);
+                                });
                         }
                     }
                 })
@@ -161,8 +178,18 @@ const DangKyScr = ({ navigation }) => {
                             borderColor: '#30CF59',
                             width: '90%'
                         }}
+                        onChangeValue={(value) => {
+                            console.log(value);
+                            value === '1' ? setisAdmin(true) : setisAdmin(false)
+                        }}
                     />
                 </View>
+
+                {
+                    isAdmin ? <View style={Style.inputBox}>
+                        <TextInput style={Style.inputText} placeholder='Security Code' onChangeText={(text) => setsecuCode(text)} secureTextEntry={true} />
+                    </View> : <View></View>
+                }
 
                 {/* Sign In Button */}
                 <TouchableOpacity style={Style.btnSignIn} onPress={checkRegis}>

@@ -39,7 +39,7 @@ const DangNhapScr = ({ navigation }) => {
                         if (objU.password != passw) {
                             mCheck = false;
                         } else {
-                            // Lưu thông tin đăng nhập vào LS
+                            // Đẩy lại thông tin User lên server
                             try {
                                 await AsyncStorage.setItem('loginInfo', JSON.stringify(objU))
                             } catch (e) {

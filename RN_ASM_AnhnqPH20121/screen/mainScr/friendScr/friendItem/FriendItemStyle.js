@@ -1,19 +1,18 @@
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container:{
-        width: '100%',
         justifyContent: 'center',
         backgroundColor: 'white',
         paddingHorizontal: 10,
-        marginTop: 5,
+        marginTop: 10,
+        marginHorizontal: 10,
         padding: 3,
+        borderRadius: 10
     },
     userInfo:{
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        borderBottomWidth: 2,
-        borderColor: '#ccc'
     },
     userImgBox:{
         width: 45,
@@ -28,7 +27,7 @@ export default StyleSheet.create({
         borderRadius: 45,
     },
     userNameBox:{
-        width: '55%',
+        width: '50%',
         marginLeft: 5,
     },
     userName:{
@@ -44,7 +43,6 @@ export default StyleSheet.create({
         marginRight: 10,
         fontSize: 15,
         color: 'black',
-
     },
     followBtn:{
         width: 100,

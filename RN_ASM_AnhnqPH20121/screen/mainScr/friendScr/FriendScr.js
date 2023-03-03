@@ -4,11 +4,13 @@ import { useState } from 'react'
 import FriendItem from './friendItem/FriendItem'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import URL from '../../../UrlAPi'
+import Style from './FriendStyleScr';
 
 const FriendScr = ({ navigation }) => {
 
   const [profiles, setprofiles] = useState([])
   const [isLoading, setisLoading] = useState(false);
+  const [userInfo, setuserInfo] = useState({})
 
   // Lấy thông tin người dùng hiện tại trong LS, hiển thị lên màn hình
   const getUserInfo = async () => {
@@ -22,9 +24,10 @@ const FriendScr = ({ navigation }) => {
     }
   }
 
-  // Fetch data profile - server
+  // Fetch data profile - server: Lấy danh sách tài khoản
   const getProfiles = async (value) => {
     let url = URL + '/profiles?id_ne=' + value.id + '&_embed=follows'
+    setuserInfo(value)
     try {
       const response = await fetch(url);
       const json = await response.json();
@@ -47,11 +50,11 @@ const FriendScr = ({ navigation }) => {
   }, []);
 
   return (
-    <View>
+    <View style={Style.container}>
       <FlatList
         keyExtractor={(item) => { return item.id }}
         data={profiles}
-        renderItem={({ item }) => <FriendItem inputData={item} navigation={navigation} onRefresh={() => loadData()} />}
+        renderItem={({ item }) => <FriendItem inputData={item} navigation={navigation} user={userInfo} onRefresh={() => loadData()} />}
         key={(item) => { return item.id }}
         refreshControl={
           <RefreshControl refreshing={isLoading} onRefresh={loadData} />
