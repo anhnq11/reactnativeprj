@@ -23,6 +23,7 @@ import URL from '../../../UrlAPi';
 const HomeScr = ({ navigation }) => {
 
   const [post, setpost] = useState([])
+  const [outPost, setoutPost] = useState([])
   const [userInfo, setuserInfo] = useState({})
   const [isLoading, setisLoading] = useState(false)
   const [isModalShow, setisModalShow] = useState(false)
@@ -135,7 +136,7 @@ const HomeScr = ({ navigation }) => {
         keyExtractor={(item) => { return item.id }}
         data={post}
         key={(item) => { return item.id }}
-        renderItem={({ item }) => <NewItems inputData={item} navigation={navigation} userInfo={userInfo}/>}
+        renderItem={({ item }) => <NewItems inputData={item} navigation={navigation} userInfo={userInfo} onPress={() => { loadData() }}/>}
         refreshControl={
           <RefreshControl refreshing={isLoading} onRefresh={loadData} />
         }

@@ -25,13 +25,11 @@ export default StyleSheet.create({
         alignItems: 'center',
         marginHorizontal: '5%',
         marginTop: '30%',
-        borderWidth: 4,
-        borderColor: '#30CF59'
     },
     modalTitle:{
-        fontSize: 30,
-        fontWeight: '500',
-        marginLeft: 10,
+        fontSize: 25,
+        fontWeight: '600',
+        color: '#30CF59'
     },
     inputBox:{
         width: 300,
@@ -40,7 +38,7 @@ export default StyleSheet.create({
         borderColor: '#30CF59',
         backgroundColor: 'white',
         padding: 10,
-        marginTop: 10,
+        marginVertical: 10,
     },
     inputText:{
         color: 'black',

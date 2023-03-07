@@ -82,10 +82,7 @@ const FriendItem = (props) => {
     const loadData = React.useCallback(async () => {
         getFollows(user.id)
         getFollowCount();
-        getFollows(user.id)
         setflid()
-        console.log(user);
-        console.log(follow);
         follow.forEach(element => {
             if (inputData.id == element.profileId) {
                 setisTrue(true)

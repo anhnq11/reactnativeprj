@@ -10,7 +10,7 @@ export default StyleSheet.create({
         padding: 3,
     },
     userInfo:{
-        width: '100%',
+        width: '90%',
         flexDirection: 'row',
         alignItems: 'center',
     },
@@ -35,33 +35,21 @@ export default StyleSheet.create({
         color: 'black',
         fontWeight: '500',
     },
-    DesBox:{
-        flexDirection: 'row',
-    },
     userDes:{
+        marginTop: -5,
         color: '#696C87',
         marginRight: 10,
         fontSize: 15,
         color: 'black',
-
     },
     userTime:{
         color: '#61605f',
         marginLeft: 5,
         marginTop: -5
     },
-    followBox:{
-        width: 40,
-        height: 40,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 5,
-    },
-    followImg:{
-        fontSize: 25,
-    },
     contentText:{
         fontSize: 16,
+        marginTop: 5,
     },
     contentImgBox:{
         width: '100%',
@@ -77,14 +65,17 @@ export default StyleSheet.create({
         height: 30,
         marginTop: 5,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         flexDirection: 'row',
+        backgroundColor: '#ccc'
     },
     reactBox:{
         width: '33%',
+        height: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'white'
     },
     reactIcon:{
         fontSize: 22,
@@ -94,35 +85,37 @@ export default StyleSheet.create({
         fontSize: 17,
     },
     modalBox:{
-        width: '90%',
+        maxHeight: '95%',
         backgroundColor: '#ccc',
         borderRadius: 10,
-        padding: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: 10,
         marginHorizontal: '5%',
-        marginVertical: '15%',
-        borderWidth: 4,
-        borderColor: '#30CF59'
+        marginVertical: '5%',
     },
-    modalTitle:{
-        width: '80%',
-        fontSize: 30,
-        fontWeight: '500',
-        marginLeft: 10,
-        textAlign: 'center',
-        marginLeft: '10%',
+    modalImgBox:{
+        height: '100%',
+        width: '100%',
+        backgroundColor: 'black',
+        justifyContent: 'center'
+    },
+    modalHeader:{
+        width: '100%',
+        flexDirection: 'row',
     },
     iconClose:{
-        color: '#30CF59',
+        color: 'black',
         fontSize: 30,
         textAlign: 'right'
     },
+    listCmt:{
+        marginVertical: 10
+    },
     cmtBox:{
-        width: 320,
-        borderBottomWidth: 1,
-        borderBottomColor: '#30CF59',
-        marginBottom: 5,
+        width: '100%',
+        marginBottom: 7,
+        backgroundColor: 'white',
+        padding: 5,
+        borderRadius: 10
     },
     cmtUserIf:{
         flexDirection: 'row',
@@ -133,7 +126,7 @@ export default StyleSheet.create({
         height: 35,
     },
     cmtName:{
-        color: '#30CF59',
+        color: 'black',
         fontWeight: '500',
         marginLeft: 5,
         fontSize: 18
@@ -144,26 +137,24 @@ export default StyleSheet.create({
     },
     addCmt:{
         flexDirection: 'row',
-        backgroundColor: '#30CF59',
-        width: 320,
-        marginTop: 10,
+        backgroundColor: 'white',
+        width: '100%',
         borderRadius: 10,
         alignItems: 'center'
     },
     ipCmt:{
-        borderColor: 'white',
-        borderWidth: 1,
         width: '85%',
         borderRadius: 10,
         paddingVertical: 3,
-        paddingHorizontal: 10,
-        margin: 3,
+        paddingHorizontal: 10,        
         fontSize: 18,
         
     },
     sendCmt:{
+        width: '15%',
         fontSize: 23,
-        color: 'white',
-        marginLeft: 5
+        color: 'black',
+        textAlign: 'center',
+        paddingRight: 5
     }
 })
